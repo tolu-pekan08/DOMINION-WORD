@@ -1,0 +1,820 @@
+/* ============================================
+   THEME VARIABLES
+   ============================================ */
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #efefef;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --accent: #d4af37;
+  --accent-dark: #2b2e4a;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --danger: #f44336;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #1e1e2e;
+  --bg-secondary: #2d2d44;
+  --bg-tertiary: #3a3a52;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --border-color: #404050;
+  --accent: #d4af37;
+  --accent-dark: #ffd700;
+  --success: #66bb6a;
+  --warning: #ffb74d;
+  --danger: #ef5350;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="dark"] a {
+  color: #ffd700;
+}
+
+/* ============================================
+   GENERAL STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+.site-header {
+  background-color: var(--accent-dark);
+  color: white;
+  padding: 15px 0;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-name {
+  color: var(--accent);
+  font-size: 1.5em;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.main-nav {
+  flex: 1;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--accent);
+  color: var(--accent-dark);
+  transform: scale(1.1);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  background: linear-gradient(135deg, var(--accent-dark) 0%, #404050 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 3px solid var(--accent);
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+.cta-button {
+  padding: 15px 40px;
+  background-color: var(--accent);
+  color: var(--accent-dark);
+  border: none;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* ============================================
+   SECTION STYLES
+   ============================================ */
+section {
+  padding: 60px 20px;
+  background-color: var(--bg-primary);
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+section:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  text-align: center;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 20px 0 15px 0;
+  color: var(--text-primary);
+}
+
+h4 {
+  font-size: 1.1em;
+  color: var(--text-primary);
+}
+
+/* ============================================
+   INFO CARDS
+   ============================================ */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.info-card {
+  background-color: var(--bg-primary);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+/* ============================================
+   PASTOR CARDS
+   ============================================ */
+.section-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pastors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.pastor-card {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.pastor-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.pastor-card h4 {
+  color: var(--accent);
+  margin: 0 0 8px 0;
+}
+
+.pastor-title {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* ============================================
+   MISSION SECTION
+   ============================================ */
+.mission-section {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  padding: 60px 20px;
+}
+
+.mission-section p {
+  font-size: 1.1em;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-section {
+  padding: 60px 20px;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.values-list li {
+  padding: 15px 0;
+  padding-left: 30px;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.values-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+/* ============================================
+   SERMONS SECTION
+   ============================================ */
+.sermons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.sermon-card {
+  background-color: var(--bg-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.sermon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sermon-video {
+  width: 100%;
+  background-color: #000;
+  aspect-ratio: 16 / 9;
+}
+
+.sermon-info {
+  padding: 20px;
+}
+
+.sermon-info h3 {
+  margin: 0 0 10px 0;
+  color: var(--text-primary);
+}
+
+.sermon-speaker {
+  color: var(--accent);
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.sermon-date {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+}
+
+/* ============================================
+   PRAYER SECTION
+   ============================================ */
+.prayer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .prayer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.prayer-form-container,
+.prayer-list-container {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.prayer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.prayer-form input,
+.prayer-form textarea {
+  padding: 12px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.prayer-form input:focus,
+.prayer-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background-color: var(--accent);
+  color: var(--accent-dark);
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.prayer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.prayer-item {
+  background-color: var(--bg-primary);
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+}
+
+.prayer-name {
+  color: var(--accent);
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.prayer-text {
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  line-height: 1.6;
+}
+
+.prayer-date {
+  color: var(--text-secondary);
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.no-requests {
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* ============================================
+   GIVING SECTION
+   ============================================ */
+.giving-intro {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.giving-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.giving-card {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.giving-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.giving-card h3 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+.giving-button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: var(--accent);
+  color: var(--accent-dark);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.giving-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.bank-details {
+  text-align: left;
+  background-color: var(--bg-primary);
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+
+.giving-info {
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+}
+
+.giving-info ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.giving-info li {
+  padding: 15px;
+  background-color: var(--bg-primary);
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.contact-item {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-item h4 {
+  color: var(--accent);
+  margin: 0 0 10px 0;
+}
+
+.contact-form {
+  background-color: var(--bg-secondary);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background-color: var(--accent-dark);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+  margin: 10px 0;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: var(--accent);
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .info-grid,
+  .pastors-grid,
+  .sermons-grid,
+  .giving-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button{
+    padding: 12px;
+    background-color: #2b2e4a;
+    color: white;
+    border: none;
+}
+
+
+@media (max-width: 980px){
+  .products-grid{ grid-template-columns: repeat(2, 1fr); }
+  .hero-grid{ grid-template-columns: repeat(6,1fr); }
+  .hero-content{ grid-column:1 / span 6; }
+  .hero-figure{ grid-column:1 / -1; order:2; }
+  .product-grid{ grid-template-columns: 1fr; }
+  .shop-layout{ grid-template-columns: 1fr; }
+  .filters{ order:2; }
+  .main-nav ul{ gap:.5rem }
+}
+
+
+@media (max-width: 560px){
+  .products-grid{ grid-template-columns: 1fr; }
+  .features-grid{ grid-template-columns: 1fr; }
+  .header-inner{ flex-wrap:wrap; gap:.6rem; }
+  .main-nav{ order:3; width:100% }
+  .main-nav ul{ justify-content:space-around; }
+  .hero-content h1{ font-size:1.45rem; }
+}
+
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(10px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+
+
+   nav { 
+        display: block;
+        margin: 10px;
+   }
+    
+
+    .hero {
+        padding: 40px 15px;
+    
+}
+
+.sevrice-img{
+   width:100%;
+  max-width:520px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  transform:translateY(6px);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+
+
+
+ footer {
+    background-color: sienna;
+    color: white;
+    text-align: center;
+    padding: 15px;
+ }
