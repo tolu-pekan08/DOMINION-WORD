@@ -36,3 +36,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteHeader = document.querySelector('.site-header');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (!navToggle || !siteHeader || !mainNav) return;
+
+  navToggle.addEventListener('click', function() {
+    const open = siteHeader.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close nav when resizing to desktop
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768 && siteHeader.classList.contains('nav-open')) {
+      siteHeader.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
