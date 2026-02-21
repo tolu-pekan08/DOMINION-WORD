@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorgin>
+    <title>About — DOMINION WORLD</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link  rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
+   <header class="site-header">
     <div class="container header-inner">
-        <a class="brand" href="index.html" aria-label="DOMINION WORLD about page">
-        <!-- <svg class="logo" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="2" y="2" width="20" height="20" rx="4" fill="currentColor"></rect>
-        </svg> -->
+        <a class="brand" href="index.html" aria-label="DOMINION WORLD sermons page">
         <span class="brand-name">DOMINION WORLD</span>
       </a>
         <nav class="main-nav" aria-label="main navigation">
@@ -23,34 +20,46 @@
             <li><a href="about.html" class="active">About</a></li>
             <li><a href="service.html">Service</a></li>
             <li><a href="contact.html">Contact</a></li>
-              <li><a href="seromons.html">seromons</a></li>
+              <li><a href="sermons.html">Sermons</a></li>
             </ul>
           </nav>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">🌙</button>
     </div>
   </header>  
   
-  <section id="about">
-    <h2>About Our Church</h2>
-    <P>
-        DOMINION world INTERNATIONAL is christ- centerd ministry committed to spreading the gospel . 
-        raising leader, and impacting lives worldwide . the church was formed by pastor young Chris Oyakhilome and he's wife
-        pastor mrs Esther in the year -----  .  the motto of the church is <b>DOMINNATING THE WORLD BY HIS WORD</b>. 
-        the church is guided by the word of God. For years the church as maintain a strong untiy  
-
-    </P>
+  <section class="hero">
+    <div class="container hero-grid">
+      <h1>About Us</h1>
+      <p class="hero-text">DOMINION World INTERNATIONAL — Dominating The World With His Word</p>
+    </div>
   </section>
-  <h1>class in the church</h1>
-  <ul>
-    <li>Adult  21-59</li>
-    <li>Youth  18-20</li>
-    <Li>Teenager 13-17</Li>
-  </ul>
-</body>
 
- <footer>
+  <main>
+    <section class="info-section">
+      <div class="container about-section">
+        <h2>About Our Church</h2>
+        <p>
+          DOMINION World INTERNATIONAL is a Christ-centered ministry committed to spreading the gospel,
+          raising leaders, and impacting lives worldwide. The church was formed by Pastor Chris Oyakhilome and his wife,
+          Pastor Mrs Esther. The motto of the church is <strong>DOMINNATING THE WORLD BY HIS WORD</strong>.
+          The church is guided by the Word of God and has maintained strong unity for years.
+        </p>
+
+        <h3>Classes in the Church</h3>
+        <ul>
+          <li>Adult 21-59</li>
+          <li>Youth 18-20</li>
+          <li>Teenager 13-17</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
     <p>
-        &copy; 2026 DOMINION WORLD INTERNATIONAL.
-        All Rigths Reservrd.
+        &copy; 2026 DOMINION WORLD INTERNATIONAL. All Rights Reserved.
     </p>
   </footer>
+  <script src="script.js"></script>
+</body>
 </html>
